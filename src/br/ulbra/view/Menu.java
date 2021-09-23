@@ -6,7 +6,7 @@
 package br.ulbra.view;
 
 import br.ulbra.dao.ConnectionFactory;
-import br.ulbra.dao.usuarioDao;
+import br.ulbra.dao.UsuarioDao;
 import java.sql.SQLException;
 /**
  *
@@ -17,11 +17,10 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
-    public Menu() throws SQLException {
+    public Menu(){
         initComponents();
-        usuarioDao usuDao = new usuarioDao();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,14 +48,12 @@ public class Menu extends javax.swing.JFrame {
         saveMenuItem11 = new javax.swing.JMenuItem();
         saveMenuItem12 = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
-        contentMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("Cadastros");
-        fileMenu.setEnabled(false);
 
         saveMenuItem.setMnemonic('s');
         saveMenuItem.setText("Cadastro de usuário");
@@ -116,7 +113,6 @@ public class Menu extends javax.swing.JFrame {
 
         editMenu.setMnemonic('e');
         editMenu.setText("Consultas");
-        editMenu.setEnabled(false);
 
         saveMenuItem6.setMnemonic('s');
         saveMenuItem6.setText("Consulta de usuário");
@@ -186,18 +182,13 @@ public class Menu extends javax.swing.JFrame {
         helpMenu.setMnemonic('h');
         helpMenu.setText("perfil");
 
-        contentMenuItem.setMnemonic('c');
-        contentMenuItem.setText("Logar");
-        contentMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contentMenuItemActionPerformed(evt);
-            }
-        });
-        helpMenu.add(contentMenuItem);
-
         aboutMenuItem.setMnemonic('a');
         aboutMenuItem.setText("Sair");
-        aboutMenuItem.setEnabled(false);
+        aboutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aboutMenuItemActionPerformed(evt);
+            }
+        });
         helpMenu.add(aboutMenuItem);
 
         menuBar.add(helpMenu);
@@ -219,35 +210,49 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
-        // TODO add your handling code here:
+        FrCadUsu cadUsu = new FrCadUsu();
+        desktopPane.add(cadUsu);
+        cadUsu.setVisible(true);
     }//GEN-LAST:event_saveMenuItemActionPerformed
 
     private void saveMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItem1ActionPerformed
-        // TODO add your handling code here:
+        FrCadSala cadSala = new FrCadSala();
+        desktopPane.add(cadSala);
+        cadSala.setVisible(true);
     }//GEN-LAST:event_saveMenuItem1ActionPerformed
-
+        
     private void saveMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItem2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_saveMenuItem2ActionPerformed
 
     private void saveMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItem3ActionPerformed
-        // TODO add your handling code here:
+        FrCadMarca cadMarca = new FrCadMarca();
+        desktopPane.add(cadMarca);
+        cadMarca.setVisible(true);
     }//GEN-LAST:event_saveMenuItem3ActionPerformed
 
     private void saveMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItem4ActionPerformed
-        // TODO add your handling code here:
+        FrCadHard cadMarca = new FrCadHard();
+        desktopPane.add(cadMarca);
+        cadMarca.setVisible(true);
     }//GEN-LAST:event_saveMenuItem4ActionPerformed
 
     private void saveMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItem5ActionPerformed
-        // TODO add your handling code here:
+        FrCadCategoria CadCategoria = new FrCadCategoria();
+        desktopPane.add(CadCategoria);
+        CadCategoria.setVisible(true);
     }//GEN-LAST:event_saveMenuItem5ActionPerformed
 
     private void saveMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItem6ActionPerformed
-        // TODO add your handling code here:
+        FrConUsu conUsu = new FrConUsu();
+        desktopPane.add(conUsu);
+        conUsu.setVisible(true);
     }//GEN-LAST:event_saveMenuItem6ActionPerformed
 
     private void saveMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItem7ActionPerformed
-        // TODO add your handling code here:
+        FrConSala conSala = new FrConSala();
+        desktopPane.add(conSala);
+        conSala.setVisible(true);
     }//GEN-LAST:event_saveMenuItem7ActionPerformed
 
     private void saveMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItem8ActionPerformed
@@ -255,26 +260,31 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_saveMenuItem8ActionPerformed
 
     private void saveMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItem9ActionPerformed
-        // TODO add your handling code here:
+        FrConMarca conMarca = new FrConMarca();
+        desktopPane.add(conMarca);
+        conMarca.setVisible(true);
     }//GEN-LAST:event_saveMenuItem9ActionPerformed
 
     private void saveMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItem10ActionPerformed
-        // TODO add your handling code here:
+        FrConHard conHard = new FrConHard();
+        desktopPane.add(conHard);
+        conHard.setVisible(true);
     }//GEN-LAST:event_saveMenuItem10ActionPerformed
 
     private void saveMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItem11ActionPerformed
-        // TODO add your handling code here:
+        FrConCategoria conMarca = new FrConCategoria();
+        desktopPane.add(conMarca);
+        conMarca.setVisible(true);
     }//GEN-LAST:event_saveMenuItem11ActionPerformed
 
     private void saveMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItem12ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_saveMenuItem12ActionPerformed
 
-    private void contentMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contentMenuItemActionPerformed
-        frLogin login = new frLogin();
-        desktopPane.add(login);
-        login.setVisible(true);
-    }//GEN-LAST:event_contentMenuItemActionPerformed
+    private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
+        this.dispose();
+        new FrLogin().setVisible(true);
+    }//GEN-LAST:event_aboutMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -313,7 +323,6 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
-    private javax.swing.JMenuItem contentMenuItem;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu editMenu;
     private javax.swing.JMenu fileMenu;
